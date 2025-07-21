@@ -398,9 +398,10 @@ body {
         margin-left: 60px;
     }
     
-    .timeline__event__icon {
+   .timeline__event__icon {
         left: 40px;
-    }
+        transform: none;
+   }
     
     .timeline__event__date {
         width: 100%;

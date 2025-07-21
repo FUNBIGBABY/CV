@@ -90,12 +90,13 @@ body {
 .hero .title {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero .subtitle {
     font-size: 1.5rem;
     opacity: 0.9;
+    margin-bottom: 1.5rem;
 }
 
 /* 导航菜单 */
@@ -113,7 +114,7 @@ body {
 }
 
 .hero-menu-desktop li {
-    margin: 0 20px;
+    margin: 0 30px;
 }
 
 .hero-menu-desktop a {
@@ -228,12 +229,12 @@ body {
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .timeline__event:nth-child(even) .timeline__event__content {
     margin-left: 0;
-    margin-right: 50px;
+    margin-right: 90px;
 }
 
 .timeline__event__title {

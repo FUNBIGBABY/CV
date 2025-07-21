@@ -256,14 +256,30 @@ body {
 
 /* 技能条样式 */
 .skill-item {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
 }
 
-.skill-item span {
+.skill-item span:first-child {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 600;
+    color: #363636;
 }
+
+.skill-percentage {
+    position: absolute;
+    top: 28px;
+    color: #999;
+    font-size: 14px;
+    transform: translateX(10px);
+    margin-top: 2px;
+}
+
+/* 为不同百分比设置位置 */
+.percentage-30 { left: 30%; }
+.percentage-40 { left: 40%; }
+.percentage-55 { left: 55%; }
 
 .progress {
     height: 20px;
@@ -288,6 +304,12 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+/* 项目卡片垂直间距 */
+.section-dark .project-card {
+  margin-bottom: 2rem; /* 你可以根据需要调整数值 */
+}
+
 
 .project-info {
     padding: 20px;

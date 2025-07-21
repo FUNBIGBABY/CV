@@ -322,41 +322,36 @@
                             <h1 class="title has-text-centered section-title">联系我</h1>
                         </div>
                         <div class="column is-8 is-offset-2">
-                            <form id="contact-form">
-                                <div class="field">
-                                    <label class="label">姓名</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="text" placeholder="您的姓名" name="name">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                    </div>
+                            <form id="contact-form"
+                                action="https://formspree.io/f/xldlgzzb"
+                                method="POST">
+                            <div class="field">
+                                <label class="label">姓名</label>
+                                <div class="control has-icons-left">
+                                <input class="input" type="text" placeholder="您的姓名" name="name" required>
+                                <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
                                 </div>
-                                <div class="field">
-                                    <label class="label">邮箱</label>
-                                    <div class="control has-icons-left">
-                                        <input class="input" type="email" placeholder="michaelgu0927@gmail.com" name="email">
-                                        <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                    </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">邮箱</label>
+                                <div class="control has-icons-left">
+                                <input class="input" type="email" placeholder="example@gmail.com" name="email" required>
+                                <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
                                 </div>
-                                <div class="field">
-                                    <label class="label">消息</label>
-                                    <div class="control">
-                                        <textarea class="textarea" placeholder="您想说的话..." name="message"></textarea>
-                                    </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">消息</label>
+                                <div class="control">
+                                <textarea class="textarea" placeholder="您想说的话..." name="message" required></textarea>
                                 </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <button class="button is-primary" type="submit">
-                                            发送消息
-                                            <span class="icon" style="margin-left: 10px;">
-                                                <i class="fas fa-paper-plane"></i>
-                                            </span>
-                                        </button>
-                                    </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                <button class="button is-primary" type="submit">
+                                    发送消息&nbsp;<i class="fas fa-paper-plane"></i>
+                                </button>
                                 </div>
+                            </div>
                             </form>
                         </div>
                     </div>
@@ -425,15 +420,15 @@
             }
         });
 
-        // 联系表单
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            Swal.fire({
-                icon: 'success',
-                title: '发送成功！',
-                text: '感谢您的联系，我会尽快回复您。',
-            });
-        });
+        // // 联系表单
+        // document.getElementById('contact-form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     Swal.fire({
+        //         icon: 'success',
+        //         title: '发送成功！',
+        //         text: '感谢您的联系，我会尽快回复您。',
+        //     });
+        // });
     </script>
 
     <!-- 2. 只写一次 Modal -->

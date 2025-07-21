@@ -481,3 +481,22 @@ body {
 .resume-download .button.is-large {
   margin-top: 40px;
 }
+
+/* 移动端：图标在左，内容在右 */
+@media screen and (max-width: 768px) {
+  .timeline__event {
+    flex-direction: row !important;
+    align-items: flex-start;
+    margin-left: 0 !important;
+  }
+  .timeline__event__icon {
+    position: relative;
+    left: 0;
+    margin-right: 10px;
+    transform: none;
+  }
+  .timeline__event__content {
+    margin: 0;
+    width: calc(100% - 60px);
+  }
+}

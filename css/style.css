@@ -88,7 +88,7 @@ body {
 
 /* Hero 部分 */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+ background: url("../img/bg.jpg") no-repeat center center/cover;
     color: white;
 }
 
@@ -463,4 +463,11 @@ body {
 
 .timeline__event--type5 .timeline__event__icon {
     background: #00d1b2;
+}
+
+/* Hero 文字改为白色，提高可读性 */
+.hero .hero-body h1,
+.hero .hero-body h2,
+.hero .hero-body h3 {
+  color: #fff !important;
 }

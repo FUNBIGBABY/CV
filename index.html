@@ -338,8 +338,11 @@
         };
 
         document.getElementById("toTop").onclick = function() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            // 平滑滚动到顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         };
 
         // 移动端菜单

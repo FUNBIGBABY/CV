@@ -409,10 +409,11 @@ body {
     }
     
     .timeline__event__date {
-        width: 100%;
+        margin-top: 40px;
+        margin-left: 40px;
+        width: auto;
         text-align: left !important;
         padding: 0 !important;
-        margin-bottom: 10px;
     }
     
     .timeline__event__content {
@@ -475,4 +476,8 @@ body {
 .hero .hero-body h2,
 .hero .hero-body h3 {
   color: #fff !important;
+}
+
+.resume-download .button.is-large {
+  margin-top: 40px;
 }

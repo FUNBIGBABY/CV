@@ -530,3 +530,40 @@ body {
     width: 33.333% !important;
   }
 }
+
+/* 移动端全局边距优化 - 这是新增的部分 */
+@media screen and (max-width: 768px) {
+  /* 为所有section添加左右padding */
+  .section-light,
+  .section-dark,
+  .section-color {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* 容器边距 */
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  /* 技能部分特别处理 */
+  #skills .container {
+    padding: 0 1.5rem;
+  }
+  
+  /* 时间线内容边距 */
+  .timeline__event__content {
+    margin-right: 1rem !important;
+  }
+  
+  /* 项目卡片边距 */
+  .project-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* 表单边距 */
+  #contact form {
+    padding: 0 1rem;
+  }
+}

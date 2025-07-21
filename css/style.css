@@ -387,47 +387,42 @@ body {
 }
 
 /* 响应式设计 */
+/* —— 合并后的移动端 Timeline 布局 —— */
 @media screen and (max-width: 768px) {
-    .timeline:before {
-        left: 40px;
-    }
-    
-    .timeline__event {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 60px;
-    }
+  /* 把竖线左移到 40px */
+  .timeline:before {
+    left: 40px;
+  }
 
-    
-    .timeline__event__icon {
-        position: relative;
-        left: 0;
-        transform: none;
-        margin: 0 0 1rem 40px;
-    }
-    
-    .timeline__event__date {
-        margin-top: 40px;
-        margin-left: 40px;
-        width: auto;
-        text-align: left !important;
-        padding: 0 !important;
-    }
-    
-    .timeline__event__content {
-        margin-top: 0.5rem;
-    }
-    
-    .hero .title {
-        font-size: 2rem;
-    }
-    
-    .hero .subtitle {
-        font-size: 1.2rem;
-    }
+  /* 每个事件改成纵向流：图标在上，日期+内容在下 */
+  .timeline__event {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;      /* 取消桌面端的 left margin */
+    padding-left: 60px;  /* 给内容留出空间，和竖线对齐 */
+    margin-bottom: 40px;
+  }
+
+  /* 图标固定放到容器左边距 0，再用 padding/left 来微调 */
+  .timeline__event__icon {
+    position: absolute;  /* 相对 .timeline 容器定位 */
+    left: 40px;          /* 和 .timeline:before 的 left 保持一致 */
+    top: 0;              /* 紧贴事件顶部 */
+    transform: translateY(0);
+    margin: 0;
+  }
+
+  /* 日期和内容全宽，取消右/左侧多余 padding */
+  .timeline__event__date,
+  .timeline__event__content {
+    width: 100%;
+    text-align: left !important;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
 }
+
 
 /* 动画效果 */
 @keyframes fadeInUp {
@@ -482,21 +477,34 @@ body {
   margin-top: 40px;
 }
 
-/* 移动端：图标在左，内容在右 */
-@media screen and (max-width: 768px) {
-  .timeline__event {
-    flex-direction: row !important;
-    align-items: flex-start;
+/* —— 仅桌面端三等分 "关于我" 三图标 —— */
+@media screen and (min-width: 769px) {
+  /* 1. 让 #about-icons 成为纯净 flex 容器 */
+  #about .columns.is-12#about-icons {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
     margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    /* （可选）左右留白，防止紧贴边缘 */
+    padding: 0 2rem !important;
   }
-  .timeline__event__icon {
-    position: relative;
-    left: 0;
-    margin-right: 10px;
-    transform: none;
+
+  /* 2. 三列平分 */
+  #about .columns.is-12#about-icons > .column {
+    flex: 1 1 33.333% !important;    /* 明确指定三等分 */
+    max-width: 33.333% !important;   /* 限制最大宽度 */
+    width: 33.333% !important;       /* 设置宽度 */
+    padding: 0 1rem !important;      /* 保留左右内边距 */
+    text-align: center !important;
   }
-  .timeline__event__content {
-    margin: 0;
-    width: calc(100% - 60px);
+  
+  /* 3. 确保column不被其他样式影响 */
+  #about .columns.is-12#about-icons > .column.is-4 {
+    flex: 1 1 33.333% !important;
+    max-width: 33.333% !important;
+    width: 33.333% !important;
   }
 }

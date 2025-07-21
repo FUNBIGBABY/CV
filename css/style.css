@@ -393,10 +393,13 @@ body {
     }
     
     .timeline__event {
-        flex-direction: column !important;
-        align-items: flex-start !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         margin-left: 60px;
     }
+
     
    .timeline__event__icon {
         left: 40px;

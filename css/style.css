@@ -386,43 +386,65 @@ body {
     text-decoration: underline;
 }
 
-/* 响应式设计 */
-/* —— 合并后的移动端 Timeline 布局 —— */
+/* 响应式设计 - 移动端时间线布局 */
 @media screen and (max-width: 768px) {
-  /* 把竖线左移到 40px */
+  /* 时间线移到左边 */
   .timeline:before {
-    left: 40px;
+    left: 20px;  /* 改小一点，从40px改为20px */
   }
 
-  /* 每个事件改成纵向流：图标在上，日期+内容在下 */
+  /* 每个事件的布局 */
   .timeline__event {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;      /* 取消桌面端的 left margin */
-    padding-left: 60px;  /* 给内容留出空间，和竖线对齐 */
+    display: block !important;  /* 改为block */
+    flex-direction: unset !important;
+    align-items: unset !important;
+    margin-left: 0 !important;
+    padding-left: 60px !important;  /* 给图标留出空间 */
     margin-bottom: 40px;
+    position: relative;
   }
 
-  /* 图标固定放到容器左边距 0，再用 padding/left 来微调 */
+  /* 图标位置 */
   .timeline__event__icon {
-    position: absolute;  /* 相对 .timeline 容器定位 */
-    left: 40px;          /* 和 .timeline:before 的 left 保持一致 */
-    top: 0;              /* 紧贴事件顶部 */
-    transform: translateY(0);
-    margin: 0;
+    position: absolute !important;
+    left: 20px !important;  /* 和timeline:before对齐 */
+    top: 0 !important;
+    transform: translateX(-50%) !important;
+    width: 40px !important;  /* 缩小图标 */
+    height: 40px !important;
+    font-size: 1.2rem !important;  /* 调整图标大小 */
   }
 
-  /* 日期和内容全宽，取消右/左侧多余 padding */
-  .timeline__event__date,
-  .timeline__event__content {
-    width: 100%;
+  /* 日期样式 */
+  .timeline__event__date {
+    width: 100% !important;
     text-align: left !important;
-    padding: 0;
-    margin: 0.5rem 0;
+    padding: 0 0 10px 0 !important;
+    margin: 0 !important;
+    font-size: 1rem !important;
+  }
+
+  /* 内容盒子 */
+  .timeline__event__content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 15px !important;
+  }
+  
+  /* 偶数项也保持一样的布局 */
+  .timeline__event:nth-child(even) {
+    flex-direction: unset !important;
+  }
+  
+  .timeline__event:nth-child(even) .timeline__event__date {
+    text-align: left !important;
+    padding-left: 0 !important;
+  }
+  
+  .timeline__event:nth-child(even) .timeline__event__content {
+    margin-right: 0 !important;
   }
 }
-
 
 /* 动画效果 */
 @keyframes fadeInUp {
